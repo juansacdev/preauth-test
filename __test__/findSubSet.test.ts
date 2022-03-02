@@ -16,6 +16,16 @@ describe("Test findSubSet function", () => {
       expect(result).toHaveLength(2)
       expect(result).toStrictEqual([4,3])
     })
+    it('should return an empty array when there is not a solution', () => {
+      const emptyArr = [6,4]
+      const n = 3
+
+      const result = findSubSet(emptyArr, n)
+
+      expect(result).toBeInstanceOf(Array)
+      expect(result).toHaveLength(0)
+      expect(result).toStrictEqual([])
+    })
   })
   describe('when params are not OK', () => {
     it('should throw a error with an empty array', () => {
