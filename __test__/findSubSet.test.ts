@@ -2,25 +2,25 @@ import { findSubSet } from '../src/game-01';
 
 describe("Test findSubSet function", () => {
   describe('when params are OK', () => {
-    const emptyArr = [0,4,2,9,3,1,3,6]
+    const setNumbers = [0,4,2,9,3,1,3,6]
     const n = 7
 
     it('should return an array', () => {
-      const result = findSubSet(emptyArr, n)
+      const result = findSubSet(setNumbers, n)
 
       expect(result).toBeInstanceOf(Array)
     })
     it('should return [4, 3]', () => {
-      const result = findSubSet(emptyArr, n)
+      const result = findSubSet(setNumbers, n)
 
       expect(result).toHaveLength(2)
       expect(result).toStrictEqual([4,3])
     })
     it('should return an empty array when there is not a solution', () => {
-      const emptyArr = [6,4]
+      const setNumbers = [6,4]
       const n = 3
 
-      const result = findSubSet(emptyArr, n)
+      const result = findSubSet(setNumbers, n)
 
       expect(result).toBeInstanceOf(Array)
       expect(result).toHaveLength(0)
